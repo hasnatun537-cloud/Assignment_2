@@ -20,7 +20,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
     <table class="table">
 
 <thead>
-
+<tr>
 <th>SL</th>
 <th>Profile</th>
 
@@ -29,6 +29,8 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 <th>Email</th>
 
 <th>Actions</th>
+</tr>
+</thead>
 <tbody> 
 
 <?php
@@ -38,13 +40,13 @@ foreach($users as $key=>$user){?>
 
 <td>
 
-<img src="<?=$user['name'] ?>" alt="" height="50px" width="50px"
+<img src="<?=$user['image_url'] ?>" alt="" height="50px" width="50px"
 
 class="rounded-circle">
 </td>
-<td>Eirin</td>
+<td><?= $user['name'] ?></td>
 
-<td>Eirin@gmail.com</td>
+<td><?= $user['email'] ?></td>
 <td>
 <div class="btn btn-group">
 <a href="" class="btn btn-sm btn-primary">View</a>
