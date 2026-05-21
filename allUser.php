@@ -4,7 +4,8 @@ include('config/db.php');
 $stmt = $conn->prepare("SELECT id, name, email, description, experience, project, image_name, image_url FROM users WHERE 1");
 $stmt->execute();
 $result = $stmt->get_result();
-print_r($result);
+$users = $result->fetch_all(MYSQLI_ASSOC);
+//print_r($result);
 ?>
 <div class="container">
 <div class="card col-md-8 mx-auto mt-3">
