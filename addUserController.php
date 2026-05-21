@@ -82,7 +82,7 @@ $new_image_name;
 
 //store in database
 include('../config/db.php');
-$stmt = $conn->prepare("INSERT INTO users (id,name, email, description, experience, project, image_name,
+$stmt = $conn->prepare("INSERT INTO users (name, email, description, experience, project, image_name,
 image_url) VALUES (?,?,?,?,?,?,?)");
 
 $stmt->bind_param("sssssss",
